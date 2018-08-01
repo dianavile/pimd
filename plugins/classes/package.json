@@ -1,7 +1,7 @@
 {
-  "name": "@pimd/classes-plugin",
+  "name": "@pimd/id-plugin",
   "version": "0.1.0",
-  "description": "Adds classes to HTML elements",
+  "description": "Add #ID to HTML elements and codeblocks",
   "main": "index.js",
   "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
   "keywords": [

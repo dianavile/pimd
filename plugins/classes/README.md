@@ -1,39 +1,41 @@
-# PIMD Classes Plugin
+# PIMD Issue 1: Class Plugin
 
-Adds HTML classes to code blocks and other elements.
+- Add Class-#ID to get HTML-element/codeblock.
 
+## Example
 
-## Example usage
+``` markdown
+# Headline <?: #my-headline ?
+ ```
 
-```` markdown
-# Headline <?: .my-headline ?>
-
-``` html .my-code
+``` html #my-code
 <p>Example</p>
 ```
 
-Lorem ipsum dolor sit amet. <?: .my-paragraph ?>
-````
-
-Results in:
-
 ``` html
-<h1 class="my-headline">Headline</h1>
-
-<div class="pimd-example my-code">
-  ...
-</div>
-
-<p class="my-paragraph">Lorem ipsum dolor sit amet.</p>
+Lorem ipsum dolor sit amet. <?: #my-paragraph ?>
 ```
 
+>
+ Result in code:
 
----
+``` html
+<h1 id="my-headline">Headline</h1>
+ <div id="my-code">
+  ...
+</div>
+ <p id="my-paragraph">Lorem ipsum dolor sit amet.</p>
+```
 
+ ---
 
 ## Copyright
 
-Copyright 2018++ [Nico Hagenburger](https://www.hagenburger.net).
-See [MIT-LICENSE](MIT-LICENSE) for details.
-Get in touch with [@hagenburger](https://twitter.com/hagenburger) on Twitter or
-[open an issue](https://github.com/hagenburger/pimd/issues/new).
+Copyright 2018++[Nico Hagenburger](https://www.hagenburger.net).
+More details: See [MIT-LICENSE](MIT-LICENSE).
+
+__Get in touch:__
+
+- Twitter [@hagenburger](https://twitter.com/hagenburger)
+  
+- [open an issue](https://github.com/hagenburger/pimd/issues/new)
