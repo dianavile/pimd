@@ -1,19 +1,19 @@
 const {Document} = require('../..')
 const plugin = require('.')
 
-describe('Classes', () => {
-  it('should add a class to a headline', () => {
+describe('Attributes', () => {
+  xit('should add an attribute to an element or blockcode', () => {
     const input = unindent`
-      # Test <?: .my-class ?>
+      X Test <?: [attribute=value] ?>
     `
     const doc = new Document(input)
     doc.config.use(plugin)
     const html = doc.render()
     expect(html)
-      .to.have.selector('h1.my-class')
+      .to.have.selector('attribute="value"')
   })
 
-  it('should add multiple classes to a paragraph', () => {
+  xit('should add an attribute to ...', () => {
     const input = unindent`
       Test <?: .my-class .my-second-class ?>
     `
@@ -24,7 +24,7 @@ describe('Classes', () => {
       .to.have.selector('p.my-class.my-second-class')
   })
 
-  it('should add a class to a code block', () => {
+  xit('should add an attribute to ...', () => {
     const input = unindent`
       ~~~ html .my-class
       <p>Lorem</p>
@@ -37,3 +37,12 @@ describe('Classes', () => {
       .to.have.selector('div.my-class')
   })
 })
+
+
+/*TESTCASES
+`[attribute=value]` → `attribute="value"`
+`[attribute="value"]` quotation marks must be stripped → `attribute="value"`
+`[attribute='value']` quotation marks must be stripped → `attribute="value"`
+`[attribute='[value]']` quotation marks must be stripped → `attribute="[value]"`
+`[attribute]` only the attribute name should be set → `attribute`
+*/

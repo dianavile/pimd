@@ -26,7 +26,7 @@ describe('ID-plugin', () => {
 
   it('should add an id to a code block', () => {
     const input = unindent`
-      ~~~ div #my-id
+      ~~~ html #my-id
       <p> Lorem ipsum dolor sit amet.</p>
       ~~~
     `
@@ -34,7 +34,23 @@ describe('ID-plugin', () => {
     doc.config.use(plugin)
     const html = doc.render()
     expect(html)
-      .to.have.selector('div#my-id')
+    .to.have.selector('div#my-id')
   })
+
+  xit('should add an id to a table', () => {
+    const input = unindent `
+      | Table <?: #th-id ?>      | Table                    |
+      |-- -- -- -- -- -- -- -- --|-- -- -- -- -- -- -- -- --|
+      | Table                    | Table <?: #td-id ?>      |
+    `
+    const doc = new Document(input)
+    doc.config.use(plugin)
+    const html = doc.render()
+
+    console.log(html)
+    expect(html)
+      .to.have.selector('p#"td-id"')
+  })
+
 })
 
